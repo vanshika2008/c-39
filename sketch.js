@@ -10,6 +10,17 @@ var form, player, game;
 
 var cars, car1, car2, car3, car4;
 
+var trackImage,car1_image,car2_image,car3_image,car4_image;
+
+function preload(){
+
+trackImage = loadImage("images/track.jpg");
+car1_image = loadImage("images/car1.png");
+car2_image = loadImage("images/car2.png");
+car3_image = loadImage("images/car3.png");
+car4_image = loadImage("images/car4.png");
+
+}
 
 function setup(){
   canvas = createCanvas(displayWidth - 20, displayHeight-30);
@@ -17,6 +28,7 @@ function setup(){
   game = new Game();
   game.getState();
   game.start();
+
 }
 
 
@@ -26,6 +38,11 @@ function draw(){
   }
   if(gameState === 1){
     clear();
-    game.play();
+    game.play(); 
   }
+  if(gameState === 2){
+    game.end();
+    
+  }
+
 }
